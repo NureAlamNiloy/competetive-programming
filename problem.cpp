@@ -12,24 +12,30 @@ int main()
     fraction();
     optimize();
     
-    int n,p=0,s=0;
+    int n;
     cin >> n;
-    int arr[n][n];
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            cin >> arr[i][j];
-        }
+   if (0 <= n && n <= 999) {
+        cout << n << endl;
+    } 
+    else if (1000 <= n && n <= 9999) {
+        cout << (n / 10) * 10 << endl;
+    } 
+    else if (10000 <= n && n <= 99999) {
+        cout << (n / 100) * 100 << endl;
+    } 
+    else if (100000 <= n && n <= 999999) {
+        cout << (n / 1000) * 1000 << endl;
+    } 
+    else if (1000000 <= n && n <= 9999999) {
+        cout << (n / 10000) * 10000 << endl;
+    } 
+    else if (10000000 <= n && n <= 99999999) {
+        cout << (n / 100000) * 100000 << endl;
+    } 
+    else if (100000000 <= n && n <= 999999999) {
+        cout << (n / 1000000) * 1000000 << endl;
     }
-
-    for(int i=0; i<n; i++){
-        p+=arr[i][i];
-        s += arr[i][n-i-1];
-    }
-    int x = abs(p-s);
-    cout << x << endl;
 
 	return 0;
 }
-
-
 
