@@ -12,29 +12,22 @@ int main()
     fraction();
     optimize();
     
-    int n;
-    cin >> n;
-   if (0 <= n && n <= 999) {
-        cout << n << endl;
-    } 
-    else if (1000 <= n && n <= 9999) {
-        cout << (n / 10) * 10 << endl;
-    } 
-    else if (10000 <= n && n <= 99999) {
-        cout << (n / 100) * 100 << endl;
-    } 
-    else if (100000 <= n && n <= 999999) {
-        cout << (n / 1000) * 1000 << endl;
-    } 
-    else if (1000000 <= n && n <= 9999999) {
-        cout << (n / 10000) * 10000 << endl;
-    } 
-    else if (10000000 <= n && n <= 99999999) {
-        cout << (n / 100000) * 100000 << endl;
-    } 
-    else if (100000000 <= n && n <= 999999999) {
-        cout << (n / 1000000) * 1000000 << endl;
+    int m,n, flag=0;
+    cin >> m >> n;
+    char arr[m][n];
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            cin >> arr[i][j];
+        }
     }
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            if(arr[i][j] == 'W' || arr[i][j] == 'G' || arr[i][j] == 'B') continue;
+            else flag = 1;
+        }
+    }
+    if(flag == 1) cout << "#Color" << endl;
+    else cout << "#Black&White" << endl;
 
 	return 0;
 }
