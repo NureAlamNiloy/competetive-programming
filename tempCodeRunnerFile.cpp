@@ -11,14 +11,13 @@ int main()
 {
     fraction();
     optimize();
-    
-    int a;
-    cin >> a;
-    if(a<100) cout << "YES" << endl;
-    else cout << "NO" << endl;
-    
+
+    int a,b,i=1;
+    while(true){
+        cin >> a >> b;
+        if(a==0 && b==0) break;
+        cout << b << " " << a << endl;
+    }
+
 	return 0;
 }
-
-
-

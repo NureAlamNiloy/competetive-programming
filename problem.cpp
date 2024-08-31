@@ -11,24 +11,12 @@ int main()
 {
     fraction();
     optimize();
-    
-    int m,n, flag=0;
-    cin >> m >> n;
-    char arr[m][n];
-    for(int i=0; i<m; i++){
-        for(int j=0; j<n; j++){
-            cin >> arr[i][j];
-        }
-    }
-    for(int i=0; i<m; i++){
-        for(int j=0; j<n; j++){
-            if(arr[i][j] == 'W' || arr[i][j] == 'G' || arr[i][j] == 'B') continue;
-            else flag = 1;
-        }
-    }
-    if(flag == 1) cout << "#Color" << endl;
-    else cout << "#Black&White" << endl;
 
+    for(int i=1000; i>0; i--){
+        cout << i << " ";
+        if((1001 - i) % 5 == 0) cout << endl;
+    }
+    
 	return 0;
 }
 
