@@ -12,9 +12,16 @@ int main()
     fraction();
     optimize();
 
-    for(int i=1000; i>0; i--){
-        cout << i << " ";
-        if((1001 - i) % 5 == 0) cout << endl;
+    int t,count,k;
+    cin >> t;
+    for(int i=0; i<t; i++){
+        cin >> k;
+        count = 0;
+        for(int i=1; i<=2000; i++){
+            if(i%3==0 || i%10 == 3) continue;
+            count++;
+            if(count == k) cout << i << endl;
+        }
     }
     
 	return 0;
