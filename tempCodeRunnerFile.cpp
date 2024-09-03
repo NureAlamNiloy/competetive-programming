@@ -1,23 +1,7 @@
-///   ***   ---   |||		 In the name of ALLAH		|||   ---   ***   ///
+for(i=0;i<n; i++){
+        x += arr[i];
+        coin++;
+        if(x>(sum-x)) break;
 
-#include<bits/stdc++.h>
-using namespace std;
-
-#define endl '\n'
-#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
-
-int main()
-{
-    fraction();
-    optimize();
-
-    int a,b,i=1;
-    while(true){
-        cin >> a >> b;
-        if(a==0 && b==0) break;
-        cout << b << " " << a << endl;
     }
-
-	return 0;
-}
+    cout <<

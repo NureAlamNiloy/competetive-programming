@@ -12,17 +12,29 @@ int main()
     fraction();
     optimize();
 
-    int t,count,k;
-    cin >> t;
-    for(int i=0; i<t; i++){
-        cin >> k;
-        count = 0;
-        for(int i=1; i<=2000; i++){
-            if(i%3==0 || i%10 == 3) continue;
-            count++;
-            if(count == k) cout << i << endl;
+    int i,n,sum=0,x=0,coin=0;
+    cin >> n;
+    int arr[n];
+    for(i=0;i<n;i++){
+       cin >> arr[i]; 
+       sum+=arr[i];
+    } 
+    for(i=0;i<n;i++){
+        for(int j=0; j<n; j++){
+            if(arr[i]>arr[j]){
+                int tamp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tamp;
+            }
         }
     }
+    for(i=0;i<n; i++){
+        x += arr[i];
+        coin++;
+        if(x>(sum-x)) break;
+
+    }
+    cout << coin << endl;
     
 	return 0;
 }
