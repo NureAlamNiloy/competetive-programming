@@ -12,22 +12,46 @@ int main()
     fraction();
     optimize();
 
-    int arr[8];
-    for(int i=0; i<8; i++){
-        cin >> arr[i];
+    string s,x;
+    x="hello";
+    cin >> s;
+    int n = s.length();
+    vector<int> v(5, 0);
+    bool hflag = false;
+    int y =0;
+    if(n<5){
+        cout << "NO" << endl;
+        return 0;
     }
-    for(int i=0; i<8; i++){
-        if(arr[i]<100 || arr[i]>675 || arr[i]%25 !=0){
-            cout << "No" << endl;
+    for(int i=0; i<5; i++){
+        for(int j =y; j<n; j++){
+            if(x[i] == s[j]){
+                if(s[j] == 'h' && hflag == false){
+                    v[i] = j;
+                    hflag = true;
+                }
+                if(hflag == false) continue;
+                v[i] = j; 
+                y = j+1;
+                break;
+            } 
+        }
+    }
+    // for(int i=0; i<5; i++){
+    //     cout << v[i] << " ";
+    // }
+
+
+    for(int i=0; i<4; i++){
+        if(v[i]> v[i+1]){
+            cout << "NO" << endl;
             return 0;
         }
-        if(i==0) continue;
-        if(arr[i]< arr[i-1]){
-            cout << "No" << endl;
-            return 0;
-        }
+       
     }
-    cout << "Yes" << endl;
+   
+    cout << "YES" << endl;
+
 	return 0;
 }
 
