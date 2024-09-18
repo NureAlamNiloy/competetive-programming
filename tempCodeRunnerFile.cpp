@@ -1,2 +1,1 @@
- == "hello") cout << "YES" << endl;
-    else
+roll

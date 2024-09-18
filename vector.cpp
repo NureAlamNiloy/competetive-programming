@@ -7,10 +7,15 @@ using namespace std;
 #define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 #define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
 
-int main()
-{
+int main(){
 
-      vector<int> v;
+    vector<int> arr(5,4); //arr(size, default value)
+
+    for (int i = 0; i < 5; i++) {
+        cout << arr[i] << " "; // 4 4 4 4 4
+    }
+
+    vector<int> v;
 
     v.push_back( 1 );
     v.push_back( 2 );
