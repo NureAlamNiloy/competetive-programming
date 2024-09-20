@@ -11,14 +11,18 @@ int main(){
     optimize();
     fraction();
 
-    int t;
-    cin >> t;
-    for(int i=0; i<t; i++){
-        string s;
-        cin >> s;
-        int n = s.length();
-        if(n>10) cout << s[0] << n-2 << s[n-1] << endl;
-        else cout << s << endl; 
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+            cin >> arr[i];
+    }
+    for(int i=1; i<n; i++){
+        if(arr[i-1]>= arr[i]){
+            cout << arr[i-1] << endl;
+            break;
+        }
+        if(i== n-1) cout << arr[i] << endl;
     }
    
 
