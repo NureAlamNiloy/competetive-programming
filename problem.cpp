@@ -11,21 +11,30 @@ int main(){
     optimize();
     fraction();
 
-    int n;
-    cin >> n;
-    int arr[n];
-    for(int i=0; i<n; i++){
-            cin >> arr[i];
-    }
-    for(int i=1; i<n; i++){
-        if(arr[i-1]>= arr[i]){
-            cout << arr[i-1] << endl;
-            break;
-        }
-        if(i== n-1) cout << arr[i] << endl;
-    }
-   
 
+    int t;
+    cin >> t;
+    while(t--){
+      int n,track;
+      cin >> n;
+      int arr[n+4];
+      for(int i=1; i<=n; i++){
+        cin >> arr[i];
+      }
+      int mn = arr[1];
+      for(int i=1; i<=n; i++){
+        if(arr[i]<=mn){
+          mn = arr[i];
+          track = i;
+        } 
+      }
+      arr[track]++;
+      long long int sum = 1;
+      for(int i=1; i<=n; i++){
+        sum*=arr[i];
+      }
+      cout << sum << endl;
+    }
 
     return 0;
 }
