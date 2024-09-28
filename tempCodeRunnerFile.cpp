@@ -1,1 +1,2 @@
-long long 
+cout << j << " ";
+            repdigits++;
