@@ -43,6 +43,7 @@ const ll infLL = 9000000000000000000;
 int main()
 {
 	optimize();
+	fraction();
     
 
 
@@ -51,17 +52,3 @@ int main()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
