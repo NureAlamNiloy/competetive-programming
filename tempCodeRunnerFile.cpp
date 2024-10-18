@@ -11,28 +11,28 @@ using namespace std;
 int main(){
     optimize();
     fraction();
-    int t,n,k;
+    
+    int t;
     cin >> t;
     while (t--){
-      cin >> n >> k;
-      int arr[n+5];
-      for(int i=0; i<n; i++) cin >>arr[i];
-      for(int i=0; i<n-1; i++){
-        if(arr[i] < k){
-          k-= arr[i];
-          arr[n-1] += arr[i];
-          arr[i] = 0;
-        }
-        else{
-          arr[i] -=k;
-          arr[n-1] += k;
-          k = 0;
-        }
+      ll x,y,n;
+      cin >> x >> y >> n;
+      vector<ll>arr(n);
+      arr[0] = x, arr[n-1] = y;
+      if(y-x < 3){
+        cout << -1 << endl;
+        continue;
       }
-      for(int i=0; i<n; i++) cout << arr[i] << " ";
+      int z = 1;
+      for(int i = n-2; i>0; i--){
+        arr[i] = arr[i+1] - z;
+        z++;
+      }
+      for(int i = 0; i<n; i++){
+        cout << arr[i] << " ";
+      }
       cout << endl;
     }
-
     return 0;
 }
 

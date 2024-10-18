@@ -1,6 +1,15 @@
 n = int(input())
-s = '3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679'
-for i in range(0, n+2):
-    print(s[i], end="")
-
-
+li = [int(i) for i in input().split()]
+li.sort()
+median = 0
+if len(li) %2 == 1:
+    median = (n+1)//2
+else:
+    median = ((n//2)+(n+1)//2)//2
+sum = 0
+for i in li:
+    if i>li[median-1]:
+        sum += (i - li[median-1])
+    else:
+        sum += (li[median-1]-i)
+print(sum)

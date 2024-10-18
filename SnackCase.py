@@ -1,5 +1,4 @@
-def squre(n):
-    return n+n
+print(5//2)
 
 
 
