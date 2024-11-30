@@ -11,25 +11,24 @@ using namespace std;
 int main(){
     optimize();
     fraction();
-    int t,n,k;
+    ll t,n;
     cin >> t;
     while (t--){
-      cin >> n >> k;
-      int arr[n+5];
-      for(int i=0; i<n; i++) cin >>arr[i];
-      for(int i=0; i<n-1; i++){
-        if(arr[i] < k){
-          k-= arr[i];
-          arr[n-1] += arr[i];
-          arr[i] = 0;
-        }
-        else{
-          arr[i] -=k;
-          arr[n-1] += k;
-          k = 0;
+      cin >> n;
+      if(n%2 ==0){
+        while(n != 0){
+          n-=2;
+          cout << 1;
         }
       }
-      for(int i=0; i<n; i++) cout << arr[i] << " ";
+      else{
+        n-=3;
+        cout << 7;
+        while(n != 0){
+          n-=2;
+          cout << 1;
+        }
+      }
       cout << endl;
     }
 
